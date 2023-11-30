@@ -1,0 +1,42 @@
+//'exercice 1
+FUNCTION dot_product(v1,v2),i :FLOAT;
+VAR
+    ps:FLOAT;
+BEGIN
+    ps=0;
+    FOR i FROM 0 TO v1.lenght STEP step  DO
+        ps+=v1[i]*v2[i];
+    END_FOR
+    
+    RETURN ps;
+END
+/*l'exercice 2 (pour detreminer si deux vecteurs donnés sont orthogonaux,
+j'utilise la fonction precedent "dot_product" et verifier si le produit scalaire est égale à 0) */
+
+ALGORITHM vecteurs_orthogonaux
+VAR
+    ps,v1,v2:FLOAT
+BEGIN
+    ps=dot_product(v1,v2);
+    IF (ps===0) THEN
+        write("les vecteurs v1 et v2 sont orthogonaux")
+        ELSE
+            write("les vecteurs v1 et v2 ne sont pas orthogonaux")
+        END_IF
+END
+// exercice 3
+ALGORITHM tri_insertion;
+VAR
+    i,i,valeur:INTEGER;
+BEGIN
+    FOR i FROM 0 TO lenght(tableau-1) STEP step  DO
+        valeur=tableau[i];
+        j=i-1;
+    END_FOR
+    WHILE (j>=0 && tableau[j] > valeur) DO
+        tableau[j+1]= tableau[j];
+        j=j-1
+        tableau[j+1]=valeur;
+    END_WHILE
+END
+
